@@ -7,7 +7,7 @@ public class Bortoluzzi
 
 	public static void main(String[] args)
 	{
-		int [] array = new int[50 ];
+		int [] array = new int[10 ];
 		int a[] = new int[5];
 
 		while(true)
@@ -43,11 +43,12 @@ public class Bortoluzzi
 				stampa(a);
 
 
-			default:
+			//default://Accordino: Il default va dopo tutti gli altri case!!!
 			case 5:
 				riempi_array(array, 1,100);
+				//Prima ti conveniva stampare l'array normale stampa(array)
 				ZigZag(array);
-				stampa(a);
+				stampa(a); // Questo non serviva visto che il metodo ZigZag già stampa quello che serve
 
 				System.out.println("Scelta errata, riprova!");
 
@@ -63,6 +64,8 @@ public class Bortoluzzi
 		System.out.println("4 - Es n. * - Titolo es. *");
 		System.out.println("5 - Es n. * - Titolo es. *");
 	}
+	
+	// ACCORDINO: manca solo la stampa dell'indice: 1.8 pt
 	public static int minArray(int[] array) 
 	{
 		int min = array[0];
@@ -77,6 +80,7 @@ public class Bortoluzzi
 		{
 			if(array[i]==min) 
 			{
+				// ACCORDINO: Quasi perfetto, bastava che qui stampassi l'indice!
 				break;
 			}
 
@@ -85,6 +89,7 @@ public class Bortoluzzi
 		return min;
 	}
 
+	// ACCORDINO: Hai stampato quelli pari disordinati e poi li hai ordinati, perché? 1pt
 	public static void stampaPari(int[] array, int[] pari) 
 	{
 
@@ -102,6 +107,8 @@ public class Bortoluzzi
 				if (array[j] < array[i])
 					swap(pari, i, j);
 	}
+	
+	// Accordino: purtroppo non va, ma c'è un minimo di ragionamento. 0.5pt
 	public static void ArrayDiv(int[]a, int []d)
 	{
 		System.out.println("scegli il multiplo da inserire");
@@ -116,6 +123,8 @@ public class Bortoluzzi
 		}
 
 	}
+	
+	// Accordino: peccato, era quasi giusto: 2pt
 	public static void ZigZag(int array[]  )
 	{
 		int k = array.length-1;
@@ -123,7 +132,7 @@ public class Bortoluzzi
 		for(int i =0; i<array.length/2; i++) 
 		{
 			System.out.println(array[i]);
-			System.out.println(array[k]);
+			System.out.println(array[k]); // Accordino dovevi fare k--
 			
 		}
 		
